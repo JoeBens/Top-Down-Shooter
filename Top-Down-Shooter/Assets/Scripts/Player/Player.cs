@@ -10,7 +10,10 @@ public class Player : MonoBehaviour
 	private Rigidbody2D rb;
 	
 	private Animator playerAnim;
-	
+
+    public int health;
+
+
 	private Vector2 move;
     // Start is called before the first frame update
     void Start()
@@ -39,4 +42,14 @@ public class Player : MonoBehaviour
 	void FixedUpdate(){
 		rb.MovePosition(rb.position + move);
 	}
+
+
+    public void TakeDamage(int damageAmount)
+    {
+        health -= damageAmount;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

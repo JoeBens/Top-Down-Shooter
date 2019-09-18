@@ -70,7 +70,7 @@ public class Summoner : Enemy
     public void SummonSpawn()
     {
         if (player != null)
-            Instantiate(spawn, summonPosition, Quaternion.identity);
+            Instantiate(spawn, new Vector2(summonPosition.x, summonPosition.y -5) , Quaternion.identity);
     }
 
     IEnumerator Attack()

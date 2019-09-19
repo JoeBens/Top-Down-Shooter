@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     public int damage;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         Invoke("DestroyProjectile", lifeTime);
     }
@@ -24,18 +24,11 @@ public class Projectile : MonoBehaviour
         transform.Translate(Vector2.up * speed * Time.deltaTime);
     }
 
-    void DestroyProjectile()
+    public void DestroyProjectile()
     {
         Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            collision.GetComponent<Enemy>().TakeDamage(damage);
-            DestroyProjectile();
-        }
-    }
+    
 }

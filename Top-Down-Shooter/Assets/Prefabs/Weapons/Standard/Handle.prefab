@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8010714578756363166}
   m_Layer: 0
   m_Name: Handle
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc5e3b41f4404c4b94e82786c905f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  shootingPosition: {fileID: 0}
+  cooldown: 0
 --- !u!1 &240309664283397837
 GameObject:
   m_ObjectHideFlags: 0

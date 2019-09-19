@@ -557,6 +557,10 @@ MonoBehaviour:
   player: {fileID: 0}
   timeBetweenShots: 4
   damage: 1
+  pickupChance: 20
+  pickups:
+  - {fileID: 3308856093744611607, guid: 8a50874d1ff421f4098ffc23faec2516, type: 3}
+  - {fileID: 8944584136148610684, guid: e947e729f2d5450428a10eb67630aa54, type: 3}
   stopDistance: 10
   attackSpeed: 8
 --- !u!50 &2593806241869344121

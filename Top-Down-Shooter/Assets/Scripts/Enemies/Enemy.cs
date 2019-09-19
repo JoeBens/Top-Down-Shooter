@@ -15,6 +15,11 @@ public class Enemy : MonoBehaviour
 
     public int damage;
 
+
+    public int pickupChance;
+
+    public GameObject[] pickups;
+
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -26,6 +31,15 @@ public class Enemy : MonoBehaviour
         health -= damageAmount;
         if(health <= 0)
         {
+            int randomNumber = Random.Range(0, 101);
+
+            if(randomNumber < pickupChance)
+            {
+                GameObject go = pickups[Random.Range(0, pickups.Length)];
+                Instantiate(go, transform.position, Quaternion.identity);
+            }
+
+
             Destroy(gameObject);
         }
     }

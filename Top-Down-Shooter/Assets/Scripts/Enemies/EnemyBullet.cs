@@ -2,25 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class EnemyBullet : Projectile
 {
     [HideInInspector]
     public Transform player;
-
-    public float speed;
-
     public Vector2 targetPos;
 
-    public float lifeTime;
 
-    public GameObject explosion;
 
-    public int damage;
-
-    void Start()
+    public override void Start()
     {
+        base.Start();
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        Invoke("DestroyProjectile", lifeTime);
+        
         targetPos = player.position;
     }
 
@@ -50,10 +45,4 @@ public class EnemyBullet : MonoBehaviour
         }
     }
 
-
-    void DestroyProjectile()
-    {
-        Instantiate(explosion, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-    }
 }
